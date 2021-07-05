@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        This is a custom comparison tool, that compares data imported from two different exccel sheets. 
     </p>
 
     <code><?= __FILE__ ?></code>

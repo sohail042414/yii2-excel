@@ -62,6 +62,21 @@ class ListController extends Controller
     }
 
     /**
+     * Lists all FirstTable models.
+     * @return mixed
+     */
+    public function actionCompare()
+    {
+        $searchModel = new SearchFirstTable();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('compare', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Displays a single FirstTable model.
      * @param integer $id
      * @return mixed

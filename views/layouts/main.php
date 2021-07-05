@@ -39,7 +39,7 @@ AppAsset::register($this);
                     ['label' => 'Import Data', 'url' => ['/import/index']],
                     ['label' => 'First List', 'url' => ['/list/first']],
                     ['label' => 'Second List', 'url' => ['/list/second']],
-                    ['label' => 'Compare', 'url' => ['/lists/compare']],
+                    ['label' => 'Compare', 'url' => ['/list/compare']],
                     /*
                     [
                         'label'=>'Others',         
@@ -102,7 +102,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Ajk Technologies <?= date('Y') ?></p>
+            <p class="pull-left">&copy;Comparson Tool <?= date('Y') ?></p>
             <p class="pull-right"><?php // Yii::powered() ?></p>
         </div>
     </footer>

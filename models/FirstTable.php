@@ -23,6 +23,9 @@ use Yii;
  */
 class FirstTable extends \yii\db\ActiveRecord
 {
+    public $compare_field_first;
+    public $compare_field_second;
+
     /**
      * {@inheritdoc}
      */
@@ -72,5 +75,22 @@ class FirstTable extends \yii\db\ActiveRecord
     public static function find()
     {
         return new FirstTableQuery(get_called_class());
+    }
+
+    public function getCompareFields()
+    {
+        return [
+            'field_1' => 'Field 1',
+            'field_2' => 'Field 2',
+            'field_3' => 'Field 3',
+            'field_4' => 'Field 4',
+            'field_5' => 'Field 5',
+            'field_6' => 'Field 6',
+            'field_7' => 'Field 7',
+            'field_8' => 'Field 8',
+            'field_9' => 'Field 9',
+            'field_10' => 'Field 10',
+        ];
+
     }
 }
