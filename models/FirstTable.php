@@ -23,8 +23,8 @@ use Yii;
  */
 class FirstTable extends \yii\db\ActiveRecord
 {
-    public $compare_field_first;
-    public $compare_field_second;
+    public $compare_field_first  = 'field_1';
+    public $compare_field_second = 'field_1';
 
     /**
      * {@inheritdoc}

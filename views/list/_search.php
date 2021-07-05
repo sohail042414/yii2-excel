@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -11,7 +12,7 @@ use yii\widgets\ActiveForm;
 <div class="first-table-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['compare'],
         'method' => 'get',
         'options' => [
             'data-pjax' => 1
@@ -32,7 +33,8 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton(Yii::t('app', 'Reset'), ['class' => 'btn btn-outline-secondary']) ?>
+        <a href="<?= Url::to(['list/compare']); ?>" class ="btn btn-warning">Reset</a>
+        <?php //= Html::resetButton(Yii::t('app', 'Reset'), ['class' => 'btn btn-outline-secondary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

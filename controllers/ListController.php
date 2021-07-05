@@ -68,7 +68,12 @@ class ListController extends Controller
     public function actionCompare()
     {
         $searchModel = new SearchFirstTable();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                
+        
+        $dataProvider = $searchModel->search_matches(Yii::$app->request->queryParams);
+
+
+
 
         return $this->render('compare', [
             'searchModel' => $searchModel,
