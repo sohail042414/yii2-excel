@@ -91,7 +91,9 @@ class SearchFirstTable extends FirstTable
      */
     public function search_matches($params)
     {
-        $query = FirstTable::find();
+        //$query = FirstTable::find();
+
+        $query = FirstTable::find()->innerJoinWith('match',true);
 
         // add conditions that should always apply here
 
@@ -122,9 +124,11 @@ class SearchFirstTable extends FirstTable
 
         $query->andFilterWhere(['like', 'field_1', $this->field_1]);
         
-        $query->join('inner join','second_table','first_table.'.$this->compare_field_first.'=second_table.'.$this->compare_field_second);
+        //$query->join('inner join','second_table','first_table.'.$this->compare_field_first.'=second_table.'.$this->compare_field_second);
 
-            //->andFilterWhere(['like', 'field_10', $this->field_10]);
+        //->andFilterWhere(['like', 'field_10', $this->field_10]);
+
+
 
         return $dataProvider;
     }

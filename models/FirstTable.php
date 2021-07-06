@@ -77,6 +77,21 @@ class FirstTable extends \yii\db\ActiveRecord
         return new FirstTableQuery(get_called_class());
     }
 
+    /**
+     * Returns all matches in second table. 
+     */
+    public function getMatches(){
+        return $this->hasMany(SecondTable::className(),['field_1'=>'field_1']);
+    }
+
+    /**
+     * Returns match in second table, assuming there is only 1 match. 
+     */
+    public function getMatch(){
+        return $this->hasOne(SecondTable::className(),['field_1'=>'field_1']);
+    }
+
+
     public function getCompareFields()
     {
         return [

@@ -67,13 +67,31 @@ class ListController extends Controller
      */
     public function actionCompare()
     {
-        $searchModel = new SearchFirstTable();
-                
+       
+        /* 
+        $records = FirstTable::find()->all();
+
+        foreach($records as $rec){
+            
+            if(is_object($rec->match)){
+                echo "<br> Match : ".$rec->match->field_1; 
+            }
+
+            echo "<hr>";
+
+            $matches = $rec->matches; 
+
+            foreach($matches as $match){
+               echo "<br> ----> ".$match->field_1;  
+            }
+
+        }
+        exit;
+        */
+
+        $searchModel = new SearchFirstTable();                
         
         $dataProvider = $searchModel->search_matches(Yii::$app->request->queryParams);
-
-
-
 
         return $this->render('compare', [
             'searchModel' => $searchModel,
